@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoke Shop Hîncești</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="age-verify-overlay">
+  <div class="age-verify-card">
+    <h2>Verificare Vârstă</h2>
+    <p>Conținutul acestui site este destinat exclusiv persoanelor cu vârsta de peste <strong>18 ani</strong>. Confirmați că aveți vârsta legală?</p>
+    <div class="verify-buttons">
+      <button class="btn-verify btn-yes" onclick="verifyAge(true)">Da, am peste 18 ani</button>
+      <button class="btn-verify btn-no" onclick="verifyAge(false)">Nu, am sub 18 ani</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="logo">Smoke<span>Shop</span></div>
+  <div class="status-dot">
+    <div class="dot" id="statusDot"></div>
+    <span id="statusText">Verificare...</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="smoke-bg" id="smokeBg"></div>
+  <div class="hero-tag">Hîncești, Moldova</div>
+  <h1>Rafinament<br>în <em>fiecare</em><br>fum</h1>
+  <p>Cele mai bune narghilele, țigări electronice și accesorii pentru fumători.</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">4.5</span>
+      <span class="stat-label">Rating</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">14</span>
+      <span class="stat-label">Recenzii</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">5+</span>
+      <span class="stat-label">Ani</span>
+    </div>
+  </div>
+</div>
+
+<div class="cta-row">
+  <a href="tel:+37369385221" class="btn btn-primary">📞 Sună acum</a>
+  <a href="https://www.google.com/maps?q=Smoke+Shop+Hincesti" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">🗺 Hartă</a>
+</div>
+
+<div class="section">
+  <div class="section-title">Categorii</div>
+  <div class="products">
+    <div class="product-card">
+      <div class="product-icon">💨</div>
+      <div class="product-info">
+        <div class="product-name">Narghilele</div>
+        <div class="product-desc">Narghilele premium din sticlă și metal, modele tradiționale și moderne</div>
+      </div>
+      <div class="product-arrow">›</div>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">⚡</div>
+      <div class="product-info">
+        <div class="product-name">Țigări Electronice</div>
+        <div class="product-desc">Vape pod-uri, mod-uri și starter kit-uri pentru începători și avansați</div>
+      </div>
+      <div class="product-arrow">›</div>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">🫧</div>
+      <div class="product-info">
+        <div class="product-name">Lichide & Arome</div>
+        <div class="product-desc">Sute de arome pentru vape și tutun pentru narghilele</div>
+      </div>
+      <div class="product-arrow">›</div>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">🧰</div>
+      <div class="product-info">
+        <div class="product-name">Accesorii</div>
+        <div class="product-desc">Cărbuni, furtunuri, vârfuri, piese de schimb și curățenie</div>
+      </div>
+      <div class="product-arrow">›</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Produse Populare</div>
+  <div class="featured-scroll">
+    <div class="item-card">
+      <div class="item-img">
+        <img src="data:image/jpeg;base64,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" alt="Narghilea Khalil" loading="lazy" decoding="async">
+        <div class="item-badge">Popular</div>
+      </div>
+      <div class="item-body">
+        <div class="item-name">Minican 4</div>
+        <div class="item-price">de la 450 lei</div>
+      </div>
+    </div>
+
+    <div class="item-card">
+      <div class="item-img">
+        <img src="https://instagram.fkiv7-1.fna.fbcdn.net/v/t51.29350-15/451379482_506421035373277_1588355912762440538_n.webp?stp=dst-jpg_e35_tt6&_nc_cat=101&ig_cache_key=MzQzMDg4OTYxNTYwMzU5MzI3Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuZGVmYXVsdF9pbWFnZS5DMyJ9&_nc_ohc=y-xz_Q2JwVwQ7kNvwEruGnI&_nc_oc=AdoyXLwXXFJcEOCHngQEL-CBmNcJNxioQwxCU2Zu11WxJsh-Zs_9gpwJFt_bjOf6btA&_nc_ad=z-m&_nc_cid=1396&_nc_zt=23&_nc_ht=instagram.fkiv7-1.fna&_nc_gid=5myM-gkvdv5XeFdz-gklwA&_nc_ss=8&oh=00_Afy224HbzJl4lc_4fxRRXdTPO6ZAdKilNAva6poA2b4wZw&oe=69C21EC0" alt="Narghilea Amy" loading="lazy" decoding="async">
+        <div class="item-badge">Recomandat</div>
+      </div>
+      <div class="item-body">
+        <div class="item-name">Narghilea</div>
+        <div class="item-price">de la 2500 lei</div>
+      </div>
+    </div>
+
+    <div class="item-card">
+      <div class="item-img">
+        <img src="data:image/jpeg;base64,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" alt="Vape Mod Box" loading="lazy" decoding="async">
+        <div class="item-badge">Popular</div>
+      </div>
+      <div class="item-body">
+        <div class="item-name">Minican 2</div>
+        <div class="item-price">de la 290 lei</div>
+      </div>
+    </div>
+
+    <div class="item-card">
+      <div class="item-img">
+        <img src="data:image/jpeg;base64,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" alt="Vape Mod Box" loading="lazy" decoding="async">
+        <div class="item-badge">Popular</div>
+      </div>
+      <div class="item-body">
+        <div class="item-name">Lichid 5% 30ml Elfiq</div>
+        <div class="item-price">de la 280 lei</div>
+      </div>
+    </div>
+
+    <div class="item-card">
+      <div class="item-img">
+        <img src="data:image/jpeg;base64,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" alt="Vape Mod Box" loading="lazy" decoding="async">
+        <div class="item-badge">Popular</div>
+      </div>
+      <div class="item-body">
+        <div class="item-name">Lichid 5% 10ml Elfiq</div>
+        <div class="item-price">de la 180 lei</div>
+      </div>
+    </div>
+
+    <div class="item-card">
+      <div class="item-img">
+        <img src="https://newsmoke.md/image/cache/data/1%20MENIU%20N.S/TABAK/photo_2022-05-13_15-16-41-228x228.jpg" alt="Tutun Nakhla" loading="lazy" decoding="async">
+      </div>
+      <div class="item-body">
+        <div class="item-name">Tutun pentru narghilea UMBRA</div>
+        <div class="item-price">de la 320 lei</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Contact & Locație</div>
+  <div class="info-list">
+    <a href="tel:+37369385221" class="info-row">
+      <div class="info-icon">📞</div>
+      <div class="info-text">
+        <div class="info-label">Telefon</div>
+        <div class="info-value">+373 693 85 221</div>
+      </div>
+      <div class="info-chevron">›</div>
+    </a>
+    <div class="info-row">
+      <div class="info-icon">📍</div>
+      <div class="info-text">
+        <div class="info-label">Adresă</div>
+        <div class="info-value">Str. Alexandru cel Bun 94/1</div>
+      </div>
+      <div class="info-chevron">›</div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">🏙️</div>
+      <div class="info-text">
+        <div class="info-label">Oraș</div>
+        <div class="info-value">Hîncești, Republica Moldova</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 14px;">
+    <div class="map-box">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1959.594222775552!2d28.5916983!3d46.8298538!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c987829faa11eb%3A0x48b838b546cb0829!2sSmoke%20Shop!5e1!3m2!1sro!2s!4v1773946283667!5m2!1sro!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-address">
+          <strong>Smoke Shop Hîncești</strong>
+          Strada Alexandru cel Bun 94/1 · Deschide în Google Maps →
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Program</div>
+  <div class="schedule">
+    <div class="schedule-row">
+      <span class="day">Luni</span>
+      <span class="hours">09:00 – 21:00</span>
+    </div>
+    <div class="schedule-row">
+      <span class="day">Marți</span>
+      <span class="hours">09:00 – 21:00</span>
+    </div>
+    <div class="schedule-row">
+      <span class="day">Miercuri</span>
+      <span class="hours">09:00 – 21:00</span>
+    </div>
+    <div class="schedule-row today" id="todayRow">
+      <span class="day">Joi ← Azi</span>
+      <span class="hours">09:00 – 21:00</span>
+    </div>
+    <div class="schedule-row">
+      <span class="day">Vineri</span>
+      <span class="hours">09:00 – 21:00</span>
+    </div>
+    <div class="schedule-row">
+      <span class="day">Sâmbătă</span>
+      <span class="hours">10:00 – 20:00</span>
+    </div>
+    <div class="schedule-row">
+      <span class="day">Duminică</span>
+      <span class="hours closed-tag">Închis</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Recenzii</div>
+  <div class="review-summary">
+    <div class="review-big">4.5</div>
+    <div>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-count">14 recenzii pe Google</div>
+    </div>
+  </div>
+
+  <div class="review-cards">
+    <div class="review-item">
+      <div class="reviewer">
+        <div class="reviewer-avatar">A</div>
+        <div>
+          <div class="reviewer-name">Alexandru M.</div>
+          <div class="reviewer-stars">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+      <div class="review-text">Cel mai bun magazin de narghilele din Hîncești. Gamă largă de produse și personal amabil.</div>
+    </div>
+
+    <div class="review-item">
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #c96a6a, #7a2020);">M</div>
+        <div>
+          <div class="reviewer-name">Maria P.</div>
+          <div class="reviewer-stars">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+      <div class="review-text">Țigările electronice sunt de calitate. Mi-au recomandat lichidul potrivit pentru mine.</div>
+    </div>
+
+    <div class="review-item">
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #6a9cc9, #204a7a);">V</div>
+        <div>
+          <div class="reviewer-name">Vasile D.</div>
+          <div class="reviewer-stars">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+      <div class="review-text">Prețuri corecte, produse originale. Revin mereu pentru accesorii narghilele.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Smoke Shop</div>
+  <div class="footer-sub">Hîncești, Republica Moldova</div>
+  <hr class="footer-divider">
+  <div class="footer-note">
+    Vânzare interzisă minorilor sub 18 ani.<br>
+    Fumatul dăunează grav sănătății.
+  </div>
+  <div class="footer-note">
+    Site creator: <a href="https://www.instagram.com/ant0nin._.19/" target="_blank" rel="noopener noreferrer">Antonin</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
