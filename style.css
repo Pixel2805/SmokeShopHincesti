@@ -16,7 +16,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 15px;
   line-height: 1.6;
   max-width: 480px;
@@ -39,7 +39,7 @@ header {
 }
 
 .logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -101,7 +101,7 @@ header {
 }
 
 .hero h1 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 38px;
   font-weight: 300;
   line-height: 1.15;
@@ -133,7 +133,7 @@ header {
 }
 
 .stat-num {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 28px;
   font-weight: 600;
   color: var(--gold);
@@ -170,7 +170,7 @@ header {
   justify-content: center;
   gap: 6px;
   transition: all 0.2s;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Playfair Display', serif;
 }
 
 .btn-primary {
@@ -193,7 +193,7 @@ header {
 .section { padding: 28px 20px; border-bottom: 1px solid var(--border); }
 
 .section-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 11px;
   font-weight: 400;
   text-transform: uppercase;
@@ -334,7 +334,7 @@ header {
 }
 
 .item-price {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 16px;
   color: var(--gold);
   font-weight: 600;
@@ -410,7 +410,7 @@ header {
 }
 
 .review-big {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 52px;
   font-weight: 600;
   color: var(--gold);
@@ -512,7 +512,7 @@ footer {
 }
 
 .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 24px;
   font-weight: 300;
   color: var(--gold);
@@ -584,7 +584,7 @@ footer {
 }
 
 .age-verify-card h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 32px;
   color: var(--gold);
   margin-bottom: 15px;
